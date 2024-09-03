@@ -11,11 +11,11 @@ st.title("Terpene Synthase-standard Library")
 now = datetime.datetime.now()
 current_hour = now.hour
 
-if 5 <= current_hour < 12:
+if current_hour < 4 or current_hour >= 21:
     st.write("### Good morning!")
-elif 12 <= current_hour < 18:
+elif 4 <= current_hour < 10:
     st.write("### Good afternoon!")
-elif 18 <= current_hour < 22:
+elif 10 <= current_hour < 14:
     st.write("### Good evening!")
 else:
     st.write("### It's late, time to rest!")
