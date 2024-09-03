@@ -53,7 +53,7 @@ AgGrid(df,
     gridOptions=gb.build(),
     updateMode=GridUpdateMode.VALUE_CHANGED,
     allow_unsafe_jscode=True,
-    height=625, size=10
+    height=635, size=10
 )
 
 st.write("1. Ye, Z., et al., CouPling cell growth and biochemical Pathway induction in Saccharomyces cerevisiae for Production of (+)-valencene and its chemical conversion to (+)-nootkatone. Metabolic Engineering, 2022. 72: P. 107-115.\n"
