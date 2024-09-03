@@ -26,6 +26,22 @@ df = pd.read_csv(file_path)
 # 定义AG-Grid的列配置
 gb = GridOptionsBuilder.from_dataframe(df)
 gb.configure_pagination()
+quick_filter_text = st.text_input(r"$\textsf{\Large search}$")
+gb.configure_grid_options(
+    quickFilterText = quick_filter_text
+)
+gb.configure_default_column()
+gb.configure_column("ComPound No", filter="agTextColumnFilter")
+gb.configure_column("Gene No", filter="agTextColumnFilter")
+gb.configure_column("Compounds Name", filter="agTextColumnFilter")
+gb.configure_column("Identification method", filter="agTextColumnFilter")
+gb.configure_column("TPS original information", filter="agTextColumnFilter")
+gb.configure_column("RT", filter="agTextColumnFilter")
+gb.configure_column("Formula", filter="agTextColumnFilter")
+gb.configure_column("Speices", filter="agTextColumnFilter")
+gb.configure_column("Resource", filter="agTextColumnFilter")
+gb.configure_column("Main or By Product", filter="agTextColumnFilter")
+gb.configure_column("Link", filter="agTextColumnFilter")
 
 # 自定义cellRenderer来显示超链接
 cell_renderer = JsCode("""
@@ -44,7 +60,7 @@ cell_renderer = JsCode("""
 # 配置列以使用自定义的cellRenderer
 gb.configure_column(
     "Link",
-    headerName="Link",
+    headerName="UniProt ID or NCBI ID",
     cellRenderer=cell_renderer
 )
 
