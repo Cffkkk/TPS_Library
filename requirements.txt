@@ -1,3 +1,5 @@
 streamlit
 pandas
 streamlit-aggrid
+plotly.express
+plotly.graph_objs
